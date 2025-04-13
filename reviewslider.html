@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1777 lab4q3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        output {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Feedback Form</h2>
+    <form>
+        <div class="slider-container">
+            <label for="quality">Quality:</label>
+            <input type="range" id="quality" name="quality" min="0" max="10" value="5" oninput="updateTotal()">
+            <output id="qualityValue">5</output>
+        </div>
+        <div class="slider-container">
+            <label for="usability">Usability:</label>
+            <input type="range" id="usability" name="usability" min="0" max="10" value="5" oninput="updateTotal()">
+            <output id="usabilityValue">5</output>
+        </div>
+        <div class="slider-container">
+            <label for="design">Design:</label>
+            <input type="range" id="design" name="design" min="0" max="10" value="5" oninput="updateTotal()">
+            <output id="designValue">5</output>
+        </div>
+        <div>
+            <strong>Total Feedback Score: </strong>
+            <output id="totalScore">15</output>
+        </div>
+    </form>
+    <script>
+        function updateTotal() {
+            // Get the slider values
+            const quality = parseInt(document.getElementById('quality').value);
+            const usability = parseInt(document.getElementById('usability').value);
+            const design = parseInt(document.getElementById('design').value);
+
+            // Update individual slider outputs
+            document.getElementById('qualityValue').textContent = quality;
+            document.getElementById('usabilityValue').textContent = usability;
+            document.getElementById('designValue').textContent = design;
+
+            // Calculate and update total score
+            const total = quality + usability + design;
+            document.getElementById('totalScore').textContent = total;
+        }
+    </script>
+</body>
+</html>

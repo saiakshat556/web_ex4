@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1777 lab4q2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            width: 500px;
+            margin: auto;
+            border: 1px solid #000000;
+        }
+        h2 {
+            color: red;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="tel"], select, textarea, input[type="color"] {
+            width: 70%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #000000;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 10px;
+        }
+        input::placeholder{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset style="margin-bottom: 30px;">
+            <legend style="color: red; font-weight: bold;">Personal Details</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="email">E-mail id:</label>
+            <input type="email" id="email" name="email" required><br>
+        
+        <label>Gender:</label>
+        <div class="radio-group" style="display: inline-block;">
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female" required> Female</label>
+        </div>
+
+        <label for="dob">DOB:</label>
+        <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy" required><br>
+
+        <label for="mobile" style="margin-bottom: 0px;">Mobile#:</label>
+        <input style="margin-bottom: 0px;" type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required><br>
+        </fieldset>
+
+        <fieldset style="display: flex; flex-direction: row;">
+            <legend style="color: red; font-weight: bold;">Educational Information</legend>
+        <label style="width: 19%;" for="degree">Degree:</label>
+        <select style="width: 29%; margin-right: 2%;" id="degree" name="degree" required>
+            <option value="">-- Select Group --</option>
+            <optgroup label="UG">
+                <option value="be">BE</option>
+                <option value="btech">BTech</option>
+                <option value="bsc">BSc</option>
+                <option value="ba">BA</option>
+                <option value="bca">BCA</option>
+                <option value="bba">BBA</option>
+                <option value="others_ug">Others</option>
+            </optgroup>
+            <optgroup label="PG">
+                <option value="me">ME</option>
+                <option value="mtech">MTech</option>
+                <option value="msc">MSc</option>
+                <option value="ma">MA</option>
+                <option value="mca">MCA</option>
+                <option value="mba">MBA</option>
+                <option value="others_pg">Others</option>
+            </optgroup>
+            <optgroup label="PhD">
+                <option value="engineering">Engineering</option>
+                <option value="science">Science</option>
+                <option value="management">Management</option>
+                <option value="others_phd">Others</option>
+            </optgroup>
+        </select><br>
+
+        <label style="width: 19%;" for="engineering">Engineering:</label>
+        <select style="width: 29%;" id="engineering" name="engineering">
+            <option value="">-- Select Group --</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="eee">EEE</option>
+            <option value="civil">CIVIL</option>
+            <option value="mech">MECH</option>
+        </select><br>
+        </fieldset>
+        <div style="display: flex;">
+            <label style="width: 18%;">Hobbies:</label>
+            <div class="checkbox-group" style="display: inline-flex; height: 20px;">
+                <input type="checkbox" name="hobby" value="chess"><span style="height: 20px; width: 180px; font-size: 14px;">Playing Chess</span>
+                <input type="checkbox" name="hobby" value="reading"><span style="height: 20px; width: 180px; font-size: 14px;">Reading Books</span>
+            </div>
+        </div>
+
+        <label for="color">Favourite Color:</label>
+        <input style="width: 50px; padding: 2px;" type="color" id="color" name="color"><br>
+
+        <label style="display: block; margin-left: 10px; color: red; font-weight: bold;" for="address">Address:</label>
+        <textarea style="margin-left: 10px; width: 93%;" cols="20" rows="5" id="address" name="address"></textarea><br>
+        <div style="display: flex; margin-bottom: 5PX;">
+            <label style="margin-left: 10px;" for="resume">Attach Resume:</label>
+            <input type="file" id="resume" name="resume"><br>
+            <input style="height: 24px;" type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
